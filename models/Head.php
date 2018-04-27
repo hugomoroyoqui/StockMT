@@ -3,7 +3,7 @@
 */
 class Head {
   // Globar parameters
-  public $root = 'http://localhost:8080/StockMT';
+  public $root = 'http://localhost/StockMT';
   public $title = "Flex StockMT";
 
   // Constructor takes "title" as parameter
