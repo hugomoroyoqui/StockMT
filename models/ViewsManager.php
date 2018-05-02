@@ -67,7 +67,7 @@ class ViewsManager
 
   function loadHomeLayout()
   {
-    $this->head->setTitle("Inicio");
+    $this->head->setTitle("Home");
     $this->setFileName("layout_home.html");
   }
 }
