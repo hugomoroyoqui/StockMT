@@ -20,6 +20,10 @@ class Router {
       $this->viewsManager->loadLoginForm();
       break;
 
+      case "toolcrib":
+      $this->viewsManager->loadToolCribLayout();
+      break;
+
       default:
       $this->viewsManager->loadHomeLayout();
       break;

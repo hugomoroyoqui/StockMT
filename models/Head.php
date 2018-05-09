@@ -3,7 +3,7 @@
 */
 class Head {
   // Globar parameters
-  public $root = 'http://localhost/StockMT';
+  public $root = 'http://localhost:8080/StockMT';
   public $title = "Flex StockMT";
 
   // Constructor takes "title" as parameter
@@ -37,6 +37,9 @@ class Head {
     <title>' . $this->title . '</title>
     <script src="' . $this->root . '/scripts/firebase_init.js"></script>
     <script src="' . $this->root . '/helpers/Schema.js"></script>
+
+    <link href="' . $this->root . '/res/css/dragula.css" rel="stylesheet" media="all">
+    <link href="' . $this->root . '/res/css/custom.css" rel="stylesheet" media="all">
     <script>var globalEmail = null;</script>
     </head>
     ';

@@ -67,5 +67,10 @@ class ViewsManager
     $this->head->setTitle("Home");
     $this->setFileName("layout_home.html");
   }
+
+  function loadToolCribLayout(){
+    $this->head->setTitle("Tool Crib Manager");
+    $this->setFileName("layout_toolcrib.html");
+  }
 }
 ?>
