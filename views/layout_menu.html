@@ -1,2 +1,72 @@
 
+<div>
+  <nav>
+    <div class="nav-wrapper light-blue darken-3">
+      <ul id="slide-out" class="side-nav fixed">
+
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="res/img/cover_placeholder.png">
+            </div>
+            <a href="#"><img id="menu_user_picture" class="circle" src="res/img/avatar_placeholder.png"></a>
+            <a href="#"><span id="menu_user_name" class="white-text name">Mi Nombre</span></a>
+            <a href="#"><span id="menu_user_email" class="white-text email">ejemplo@gmail.com</span></a>
+          </div>
+        </li>
+        <li><a class="subheader">Administración</a></li>
+        <li><a href="?view=home" class="waves-effect"><i class="material-icons">dashboard</i>Dashboard</a></li>
+        <li><a href="?view=medconsult" class="waves-effect"><i class="material-icons">note_add</i>Consulta</a></li>
+        <li><a href="?view=agenda" class="waves-effect"><i class="material-icons">event</i>Agenda</a></li>
+        <li><a href="?view=patients" class="waves-effect"><i class="material-icons">search</i>Mis pacientes</a></li>
+        <li><a href="?view=recipes" class="waves-effect"><i class="material-icons">print</i>Recetas</a></li>
+        <li><a href="?view=lab-order" class="waves-effect"><i class="material-icons">subject</i>Laboratorio</a></li>
+        <li><a href="?view=xrays" class="waves-effect"><i class="material-icons">compare</i>Rayos X</a></li>
+
+
+
+        <li><div class="divider"></div></li>
+        <li><a class="subheader" class="waves-effect">Directorio</a></li>
+        <li><a href="?view=profile" class="waves-effect"><i class="material-icons">web_asset</i>Mi página</a></li>
+        <li><a href="?view=editprofile" class="waves-effect"><i class="material-icons">edit</i>Editar página</a></li>
+
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">General</a></li>
+        <li><a href="?view=membresia" class="waves-effect"><i class="material-icons">attach_money</i>Mi membresía</a></li>
+        <li><a href="?view=home" class="waves-effect"><i class="material-icons">show_chart</i>Estadísticas</a></li>
+        <li><a href="?view=home" class="waves-effect"><i class="material-icons">star_rate</i>Favoritos</a></li>
+        <li><a href="?view=configuration" class="waves-effect"><i class="material-icons">settings</i>Configuración</a></li>
+
+
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse hide-on-large"><i class="material-icons">menu</i></a>
+      <a href="./" class="brand-logo"><div style="width: 200px; height: 40px; margin: 12px 4px; background-repeat: no-repeat; background-size: contain; background-position: center; background-image: url('res/img/estilonovalogo_small.png')"></div></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="waves-effect" href="#"><i class="material-icons left">location_on</i>Directorio médico</a></li>
+        <li><div class="vertical-divider"></div></li>
+        <li><a class="waves-effect" href="#"><i class="material-icons left">import_contacts</i>Revista</a></li>
+        <li><div class="vertical-divider"></div></li>
+        <li><a class="waves-effect" href="#"><i class="material-icons left">receipt</i>Artículos</a></li>
+        <li><div class="vertical-divider"></div></li>
+        <li><a class="waves-effect" href="#"><i class="material-icons left">forum</i>Comunidad</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
 <script src="scripts/script_menu.js"></script>
+<script>
+ $('.button-collapse').sideNav();
+ $('.button-collapse').click(function(){
+   $('#slide-out').css('z-index', 9999);
+ })
+
+ $(window).on('resize', function(){
+   var screenSize = $('body').innerWidth(); //TODO: Get with without the scrollbars
+   if (screenSize > 975 && screenSize < 1184) {
+        $('#slide-out').css('z-index', -10);
+   } else {
+     $('#slide-out').css('z-index', 9999);
+   }
+});
+</script>
