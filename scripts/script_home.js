@@ -17,7 +17,7 @@ $(document).ready(function(){
 
   function appendProduct(product) {
     $("#products_wrapper").append(`
-      <a href="#" class="collection-item avatar home-product row">
+      <a href="#" class="collection-item avatar home-product">
         <div class="col s12 m4">
           <img src="` + Utils.imgThumb(product.picture) + `" height="80" class="materialboxed">
           <span class="description">` + product.description + `</span>
