@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule    ^/?$ index.php    [NC,L]
+
+RewriteRule    ^home/?$       ?view=home    [NC,L]
+RewriteRule    ^login/?$       ?view=login    [NC,L]
+RewriteRule    ^toolcrib/?$       ?view=toolcrib    [NC,L]

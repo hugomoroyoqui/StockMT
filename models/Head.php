@@ -3,7 +3,9 @@
 */
 class Head {
   // Globar parameters
-  public $root = 'http://localhost:8080/StockMT';
+  //public $root = 'http://localhost:8080/StockMT'; // Ruta de Hugo
+  public $root = 'http://localhost/StockMT'; // Ruta de Alex
+  //public $root = 'http://stedcode.com/projects/StockMT'; // Ruta de Hugo
   public $title = "Flex StockMT";
 
   // Constructor takes "title" as parameter
@@ -37,9 +39,10 @@ class Head {
     <title>' . $this->title . '</title>
     <script src="' . $this->root . '/scripts/firebase_init.js"></script>
     <script src="' . $this->root . '/helpers/Schema.js"></script>
+    <script src="' . $this->root . '/helpers/Utils.js"></script>
 
     <link href="' . $this->root . '/res/css/dragula.css" rel="stylesheet" media="all">
-    <link href="' . $this->root . '/res/css/custom.css" rel="stylesheet" media="all">
+    <link href="' . $this->root . '/res/css/custom.css?' . mt_rand() . '" rel="stylesheet" media="all">
     <script>var globalEmail = null;</script>
     </head>
     ';
