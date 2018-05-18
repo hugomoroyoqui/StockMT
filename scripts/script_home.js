@@ -38,11 +38,11 @@ $(document).ready(function(){
 
         <div id="quantity_wrapper" class="col s2 input-field">
 
-          <input id="add_item_quantity" class="quantity_` + id + `" type="number" name="quantity" min="1" max="200" placeholder="Cantidad">
+          <input id="add_item_quantity" class="quantity_` + id + `" type="number" name="quantity" min="1" max="200" placeholder="Quantity">
           <label id="stock_for_` + id + `" for="add_item_quantity" class="active">` + product.stock + ` in stock</label>
         </div>
         <div class="col s12 m3">
-          <button onclick="addProduct(` + id + `)" class="waves-effect waves-light blue darken-3 btn right" style="width: 100%;"><i class="material-icons left">add</i>Agregar</button>
+          <button onclick="addProduct(` + id + `)" class="waves-effect waves-light blue darken-3 btn right" style="width: 100%;"><i class="material-icons left">add</i>Add item</button>
         </div>
       </li>
       `);
