@@ -8,6 +8,6 @@ class Utils {
   }
 
   static priceText(priceValue){
-    return "$" + priceValue.toFixed(2) + " USD";
+    return "$" + parseFloat(priceValue).toFixed(2) + " USD";
   }
 }
