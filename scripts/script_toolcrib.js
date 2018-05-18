@@ -14,9 +14,12 @@ setTimeout(notification.close(), 500)
       }
 }
 
-
-
 dragula([document.querySelector('#pending'), document.querySelector('#ready'), document.querySelector('#pickedup')],{
 }).on('drop', function (el) {
   showNotification();
+  });
+
+
+  $(document).ready(function(){
+    $('.modal').modal();
   });
