@@ -19,7 +19,6 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
   showNotification();
   });
 
-
   $(document).ready(function(){
     $('.modal').modal();
   });
