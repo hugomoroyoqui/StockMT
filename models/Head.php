@@ -5,7 +5,7 @@ class Head {
   // Globar parameters
   //public $root = 'http://localhost:8080/StockMT'; // Ruta de Hugo
   public $root = 'http://localhost/StockMT'; // Ruta de Alex
-  //public $root = 'http://stedcode.com/projects/StockMT'; // Ruta de Hugo
+  //public $root = 'http://stedcode.com/projects/stockmt'; // Ruta de Hugo
   public $title = "Flex StockMT";
 
   // Constructor takes "title" as parameter

@@ -72,5 +72,10 @@ class ViewsManager
     $this->head->setTitle("Tool Crib Manager");
     $this->setFileName("layout_toolcrib.html");
   }
+
+  function loadCartLayout(){
+    $this->head->setTitle("Confirm my order");
+    $this->setFileName("layout_cart.html");
+  }
 }
 ?>

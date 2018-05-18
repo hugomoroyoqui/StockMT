@@ -28,6 +28,10 @@ class Router {
       $this->viewsManager->loadToolCribLayout();
       break;
 
+      case "cart":
+      $this->viewsManager->loadCartLayout();
+      break;
+
       default:
       $this->viewsManager->loadLoginForm();
       break;
