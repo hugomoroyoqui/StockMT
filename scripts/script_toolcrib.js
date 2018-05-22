@@ -44,20 +44,20 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
       <li class="collection-item avatar home-product">
       <div class="col s12 m5">
       <img src="` + Utils.imgThumb(product.picture) + `" height="80" class="materialboxed">
-      <span class="description">` + product.description + `</span>
-      <p class="part_number">` + product.part_number +  `</p>
+      <span class="description">Product Name</span>
+      <p class="part_number">Part Number</p>
       </div>
       <div class="col s2">
-      <p class="center-align">` + product.category + `<br> ` + product.location + `</p>
+      <p class="center-align">Category<br>Location</p>
       </div>
       <div class="col m2 hide-on-small"></div>
-      <p class="col s2">` + product.quantity + ` requested </br> ` + product.stock + ` in stock</p>
+      <p class="col s2">4 requested </br> 10 in stock</p>
       <div class="col m2 hide-on-small"></div>
       <div class="col s12 m1">
       <form action="#">
        <p>
-         <input type="checkbox" id="test5" />
-         <label for="test5"></label>
+         <input type="checkbox" id="test6" />
+         <label for="test6"></label>
        </p>
        </form>
       </div>
@@ -66,14 +66,14 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
       <li class="collection-item avatar home-product">
       <div class="col s12 m5">
       <img src="` + Utils.imgThumb(product.picture) + `" height="80" class="materialboxed">
-      <span class="description">` + product.description + `</span>
-      <p class="part_number">` + product.part_number +  `</p>
+      <span class="description">Product Name</span>
+      <p class="part_number">Part Number</p>
       </div>
       <div class="col s2">
-      <p class="center-align">` + product.category + `<br> ` + product.location + `</p>
+      <p class="center-align">Category<br>Location</p>
       </div>
       <div class="col m2 hide-on-small"></div>
-      <p class="col s2">` + product.quantity + ` requested </br> ` + product.stock + ` in stock</p>
+      <p class="col s2">4 requested </br> 10 in stock</p>
       <div class="col m2 hide-on-small"></div>
       <div class="col s12 m1">
       <form action="#">
