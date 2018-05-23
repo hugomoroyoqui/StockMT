@@ -29,16 +29,6 @@ function loadReadyOrders() {
 
 function showNotification() {
 
-    if (Notification.permission !== "granted")
-        Notification.requestPermission();
-      else {
-        var audio = new Audio('res/raw/plucky.mp3');
-
-        var notification = new Notification('Available orders', {
-          icon: 'res/img/flexLogo2.png',
-          body: "¡New orders are available!"
-        });
-        audio.play();
-setTimeout(notification.close(), 500)
-      }
+  var audio = new Audio('res/raw/plucky.mp3');
+  audio.play();
 }
