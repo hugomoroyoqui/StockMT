@@ -88,8 +88,8 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
       var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('pending');
       orders.on('child_added', function(snapshot) {
 
-        var description = snapshot.val().products[0].quantity + " " + snapshot.val().products[0].description;
-        snapshot.val().products.forEach(function(e){description = description + ", " + e.quantity + " " + e.description})
+        var description = "";
+        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
         $("#pending").append(`
           <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
             <div class="card-content white-text">
@@ -111,8 +111,8 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
 
       var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('ready');
       orders.on('child_added', function(snapshot) {
-        var description = snapshot.val().products[0].quantity + " " + snapshot.val().products[0].description;
-        snapshot.val().products.forEach(function(e){description = description + ", " + e.quantity + " " + e.description})
+        var description = "";
+        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
         $("#ready").append(`
           <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
             <div class="card-content white-text">
@@ -134,8 +134,8 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
 
       var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('pickedup');
       orders.on('child_added', function(snapshot) {
-        var description = snapshot.val().products[0].quantity + " " + snapshot.val().products[0].description;
-        snapshot.val().products.forEach(function(e){description = description + ", " + e.quantity + " " + e.description})
+        var description = "";
+        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
         $("#pickedup").append(`
           <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
             <div class="card-content white-text">

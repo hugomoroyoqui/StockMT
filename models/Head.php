@@ -4,8 +4,8 @@
 class Head {
   // Globar parameters
   //public $root = 'http://localhost:8080/StockMT'; // Ruta de Hugo
-  public $root = 'http://localhost/StockMT'; // Ruta de Alex
-  //public $root = 'http://stedcode.com/projects/stockmt'; // Ruta de Hugo
+  //public $root = 'http://localhost/stockmt'; // Ruta de Alex
+  public $root = 'http://stedcode.com/projects/stockmt'; // Ruta de Hugo
   public $title = "Flex StockMT";
 
   // Constructor takes "title" as parameter
@@ -38,6 +38,7 @@ class Head {
     <!-- Local libraries | Title -->
     <title>' . $this->title . '</title>
     <script src="' . $this->root . '/scripts/firebase_init.js"></script>
+    <script src="' . $this->root . '/scripts/timeago.js"></script>
     <script src="' . $this->root . '/helpers/Schema.js"></script>
     <script src="' . $this->root . '/helpers/Utils.js"></script>
 
