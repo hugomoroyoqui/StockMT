@@ -2,36 +2,37 @@
   <h5>Review your order details</h5>
   <div class="divider"></div>
   <ul id="cart_wrapper" class="collection" style="border: 1px solid #ededed">
-    <div class="progress">
+    <div class="progress" style="display: none">
       <div class="indeterminate"></div>
     </div>
   </ul>
   <div class="divider"></div>
   <div class="row nobottommargin">
     <div class="input-field col s12 l4">
-      <select>
+      <select id="cost_center">
         <option value="" disabled selected>Choose your cost center</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+        <option value="605200">605200</option>
+        <option value="605205">605205</option>
+        <option value="605220">605220</option>
+        <option value="610050">610050</option>
       </select>
       <label>Cost Center</label>
     </div>
     <div class="input-field col s12 l4">
-      <select>
+      <select id="area_manager">
         <option value="" disabled selected>Select your area manager</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
+        <option value="Carlos Barrón">Carlos Barrón</option>
+        <option value="Carlos Lugo">Carlos Lugo</option>
+        <option value="Jorge Coronado">Jorge Coronado</option>
       </select>
       <label>Area manager</label>
     </div>
     <div class="input-field col s12 l4">
-      <select>
+      <select id="priority">
         <option value="" disabled selected>Select the priority</option>
-        <option value="1">Low</option>
-        <option value="2">Medium</option>
-        <option value="3">High</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
       </select>
       <label>Priority</label>
     </div>
@@ -40,13 +41,13 @@
   <div class="row nobottommargin">
     <div class="input-field col s12">
       <i class="material-icons prefix">mode_edit</i>
-      <textarea id="icon_prefix2" class="materialize-textarea">&nbsp;</textarea>
-      <label for="icon_prefix2">Additional information (Optional)</label>
+      <textarea id="information" class="materialize-textarea">&nbsp;</textarea>
+      <label for="information">Additional information (Optional)</label>
     </div>
   </div>
   <div class="divider"></div>
   <div class="row nobottommargin">
-    <a class="col btn-large waves-effect waves-light green darken-1 s12 m4 offset-m8"><i class="material-icons left">done</i>Confirm order</a>
+    <a id="btn_confirm_order" class="col btn-large waves-effect waves-light green darken-1 s12 m4 offset-m8"><i class="material-icons left">done</i>Confirm order</a>
   </div>
 </div>
 <script src="scripts/script_cart.js"></script>

@@ -9,8 +9,9 @@
   };
   firebase.initializeApp(config);
   var db = firebase.firestore();
-  db.enablePersistence()
+  /*db.enablePersistence()
   .then(function() { })
   .catch(function(err) {
       console.log(err);
-  });
+  });*/
+  var realtime = firebase.database();

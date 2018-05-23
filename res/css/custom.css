@@ -134,3 +134,25 @@ max-height: auto;
   font-weight: 300;
   padding: 12px;
 }
+
+#pickedup .list-card {
+  background-color: #388e3c !important;
+  display: none;
+}
+
+#ready .list-card {
+  background-color: #1976d2 !important;
+  display: none;
+}
+
+#pending .list-card {
+  background-color: #455a64 !important;
+  display: none;
+}
+
+.list-card p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 800px;
+}

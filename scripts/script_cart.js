@@ -1,6 +1,8 @@
+var cart;
 $(document).ready(function(){
-  var cart = JSON.parse(window.localStorage.getItem("cart"));
+  cart = JSON.parse(window.localStorage.getItem("cart"));
   if(cart && cart.length > 0){
+    $(".progress").show(200);
     var i = 0;
     cart.forEach(function(product){
       appendProduct(i, product);
@@ -33,4 +35,40 @@ function appendProduct(id, product) {
 
     </li>
     `);
+  }
+
+  $("#btn_confirm_order").click(function(){
+    var cost_center = $("#cost_center").val();
+    var area_manager = $("#area_manager").val();
+    var priority = $("#priority").val();
+    var information = $("#information").val();
+    if(cart.length > 0){
+      realtime.ref("Orders").push({
+        products: cart,
+        status: "pending",
+        cost_center: cost_center,
+        area_manager: area_manager,
+        priority: priority,
+        information: information,
+        time: new Date().getTime()
+      }).then(function(){
+        Materialize.toast("Your order was sent and it's waiting for approval", 4000);
+        setTimeout(function(){
+          window.location = "login";
+        }, 4000);
+      }).catch(function(error){
+        console.log(error);
+      })
+    }
+  })
+
+  function writeToRealtime(id) {
+    realtime.ref("Orders/" + id).set({
+      id: id,
+      status: "pending"
+    }).then(function(){
+      console.log("Succesfully written to Realtime");
+    }).catch(function(error){
+      console.log(error);
+    })
   }
