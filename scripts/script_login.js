@@ -27,6 +27,18 @@ function loadReadyOrders() {
   });
 }
 
+$("#btn_signIn").click(function(){
+  var employee = $('#txtUserName').val();
+  if (employee === "15304025" || employee=== "15304031" || employee==="15304002") { window.location = "?view=home"; }
+  else { Materialize.toast("Incorrect Employee", 2000) }
+})
+
+if($('#ready_to_pick_up').not(':empty')) {
+
+  } else {
+    alert("No content");
+  }
+
 function showNotification() {
 
   var audio = new Audio('res/raw/plucky.mp3');
