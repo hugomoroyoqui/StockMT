@@ -13,9 +13,10 @@ class ViewsManager
 
   function setFileName($fileName) {
     $this->fileName = $fileName;
-    if($fileName == "layout_login.html") {
+    if($fileName == "layout_login.html" || $fileName == "layout_confirm.html") {
       $this->generateSignupBody();
-    } else {
+    } 
+    else {
       $this->generateHomeBody();
     }
 
@@ -76,6 +77,11 @@ class ViewsManager
   function loadCartLayout(){
     $this->head->setTitle("Confirm my order");
     $this->setFileName("layout_cart.html");
+  }
+
+  function loadConfirmLayout(){
+    $this->head->setTitle("Approve this order");
+    $this->setFileName("layout_confirm.html");
   }
 }
 ?>
