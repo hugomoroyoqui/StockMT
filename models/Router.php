@@ -32,6 +32,10 @@ class Router {
       $this->viewsManager->loadCartLayout();
       break;
 
+      case "confirm":
+      $this->viewsManager->loadConfirmLayout();
+      break;
+
       default:
       $this->viewsManager->loadLoginForm();
       break;
