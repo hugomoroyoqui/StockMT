@@ -15,9 +15,8 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
 
   $(document).ready(function(){
     $('.modal').modal();
-    loadPendingOrders();
-    loadReadyOrders();
-    loadPickedUpOrders();
+
+    loadOrders();
   });
 
   function updateElement(id, status) {
@@ -74,73 +73,43 @@ dragula([document.querySelector('#pending'), document.querySelector('#ready'), d
       `);
     }
 
-    function loadPendingOrders() {
+    function loadOrders() {
       console.log("1");
+      var ref = firebase.database().ref('Orders');
+      ref.on('value', function(snapshot) {
 
-      var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('pending');
-      orders.on('child_added', function(snapshot) {
+          $("#pending").empty();
+          $("#pickedup").empty();
+          $("#ready").empty();
+  snapshot.forEach(function(childSnapshot) {
+      appendCard(childSnapshot);
+  });
+});
 
-        var description = "";
-        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
-        $("#pending").append(`
-          <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
-            <div class="card-content white-text">
-              <p><b>` + description + `</b></p>
-              <span>` + timeago().format(snapshot.val().time) + `</span>
-              <span><br>Priority: ` + snapshot.val().priority + `</span>
-            </div>
-            <div class="card-action white-text">
-              <span><b>By Alejandro Ríos:</b> 345351</span>
-            </div>
-          </a>
-          `);
-          $(".list-card").show(200);
-          showNotification();
-      });
-    }
+function appendCard(order) {
+  $("#" + order.val().status).append(`
+    <a id=` + order.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2">
+      <div class="card-content white-text">
+        <p><b>` + generateDescription(order) + `</b></p>
+        <span>` + timeago().format(order.val().time) + `</span>
+        <span><br>Priority: ` + order.val().priority + `</span>
+      </div>
+      <div class="card-action white-text">
+        <span><b>By Alejandro Ríos:</b> 3453511</span>
+      </div>
+    </a>
+    `);
+}
 
-    function loadReadyOrders() {
-      console.log("2");
+function generateDescription(order) {
+  var description = order.val().products[0].quantity + " " + order.val().products[0].description;
+  if(order.val().products.length > 1) {
+    for (var i = 1; i < order.val().products.length; i++) {
+    description = description + ", " + order.val().products[i].quantity + " " + order.val().products[i].description
 
-      var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('ready');
-      orders.on('child_added', function(snapshot) {
-        var description = "";
-        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
-        $("#ready").append(`
-          <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
-            <div class="card-content white-text">
-              <p><b>` + description + `</b></p>
-              <span>` + timeago().format(snapshot.val().time) + `</span>
-              <span><br>Priority: ` + snapshot.val().priority + `</span>
-            </div>
-            <div class="card-action white-text">
-              <span><b>By Alejandro Ríos:</b> 345351</span>
-            </div>
-          </a>
-          `);
-          $(".list-card").show(200);
-      });
-    }
+  }
+}
+return description;
+}
 
-    function loadPickedUpOrders() {
-      console.log("3");
-
-      var orders = firebase.database().ref('Orders').orderByChild('status').equalTo('pickedup');
-      orders.on('child_added', function(snapshot) {
-        var description = "";
-        snapshot.val().products.forEach(function(e){description = " " + e.quantity + " " + e.description + description + " "});
-        $("#pickedup").append(`
-          <a id=` + snapshot.key + ` class="list-card js-member-droppable ui-droppable card blue-grey darken-2" style="display: none">
-            <div class="card-content white-text">
-              <p><b>` + description + `</b></p>
-              <span>` + timeago().format(snapshot.val().time) + `</span>
-              <span><br>Priority: ` + snapshot.val().priority + `</span>
-            </div>
-            <div class="card-action white-text">
-              <span><b>By Alejandro Ríos:</b> 345351</span>
-            </div>
-          </a>
-          `);
-          $(".list-card").show(200);
-      });
     }

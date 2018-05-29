@@ -3,7 +3,7 @@
 */
 class Head {
   // Globar parameters
-  public $root = 'http://localhost:8080/StockMT'; // Ruta de Hugo
+  public $root = 'http://localhost:8080/stockmt'; // Ruta de Hugo
   //public $root = 'http://localhost/stockmt'; // Ruta de Alex
   //public $root = 'http://stedcode.com/projects/stockmt'; // Ruta de Hugo
   public $title = "Flex StockMT";
