@@ -54,7 +54,7 @@ function appendProduct(id, product) {
       }).then(function(){
         Materialize.toast("Your order was sent and it's waiting for approval", 4000);
         setTimeout(function(){
-          window.location = "login";
+          window.location = "http://stedcode.com/projects/stockmt";
         }, 4000);
       }).catch(function(error){
         console.log(error);

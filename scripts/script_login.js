@@ -39,7 +39,7 @@ function appendCard(order) {
         <p>` + timeago().format(order.val().time) + `</p>
       </div>
       <div class="card-action white-text">
-        <span>To: Alejandro Ríos: 345351</span>
+        <span>To: Alejandro Ríos: 345351<br>Folio: ####</span>
       </div>
     </div>
     `);
